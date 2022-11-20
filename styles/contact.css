@@ -1,0 +1,103 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;400;500;600;700;800&display=swap');
+
+:root{
+    --darkText: #181818;
+    --whiteText: #717171;
+    --whiteBack: #FFF;
+    --darkBack: #F6F5EF;
+    --focusColor: #FFCC33;
+}
+
+.contact-content{
+    display: flex;
+}
+
+.contact-content > .join-me{
+    padding: 10px;
+    padding-left: 0px;
+    flex-grow: 1;
+}
+
+.join-me ul li {
+    display: flex;
+    padding: 0px;
+    margin-top: 10px;
+
+}
+
+.join-me li p {
+    color: var(--darkText);
+    font-size: 17px;
+
+}
+
+
+.contact-content svg{
+    width: 23px;
+    height: 23px;
+    color: var(--focusColor);
+    margin-right: 10px;
+
+}
+.contact-content > .contacts > div{
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+
+}
+.contact-content > .mail-me{
+    flex-basis: 55%;
+}
+
+.social-network{
+    margin-top: 20px;
+}
+
+.social-network h5{
+    font-weight: 400;
+    font-size: 18px;
+
+}
+
+
+.contact-content > .mail-me > h4{
+    font-size: 16px;
+    font-weight: 300;
+}
+
+
+.contacts-section input:hover, .contacts-section textarea:hover{
+    box-sizing: border-box;
+    border-bottom: 2px solid var(--focusColor);
+    transition: all .2s ease;
+}
+.contacts-section input:focus, .contacts-section textarea:focus{
+    outline-width: 0;
+    border-bottom: 2px solid var(--focusColor);
+}
+
+
+
+/* ------------- footer ----------- */
+.footer{
+    height: 120px;
+    background-color: var(--darkText);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.footer > p{
+    letter-spacing: 1.3px;
+    font-weight: 300;
+    font-size: 14px;
+    color: var(--darkBack);
+}
+@media screen and (max-width: 560px){
+    .contact-content{
+        flex-direction: column;
+    }
+    .contact-content > .join-me {
+        padding: 0px;
+    }
+    
+}

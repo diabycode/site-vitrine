@@ -1,0 +1,70 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;400;500;600;700;800&display=swap');
+
+:root{
+    --darkText: #181818;
+    --whiteText: #717171;
+    --whiteBack: #FFF;
+    --darkBack: #F6F5EF;
+    --darkSection: #FBFAF9;
+    --focusColor: #FFCC33;
+}
+
+.portfolio-section > .section-contener > a:hover{
+    color: var(--darkText);
+    background-color: var(--darkBack);
+}
+
+.portfolio-section > .section-contener > a{
+    background-color: var(--darkText);
+    color: var(--darkBack);
+    padding: 5px 15px;
+    display: inline-block;
+}
+
+.portfolio-item{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 50px;
+
+}
+.portfolio-item > .separator{
+    height: 80px;
+    width: 15px;
+    border-radius: 20px;
+    background-color: var(--focusColor);
+}
+.portfolio-item > .p-item1{
+    margin-right: 30px;
+}
+.portfolio-item > .p-item2{
+    margin-left: 30px;
+}
+.portfolio-item > .p-item{
+    height: 380px;
+    width: 360px;
+    background-image: url("../images/project-thumbnail.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center top;
+    box-shadow: 0px 0px 22px rgba(164, 164, 164, 0.635);
+}
+
+@media screen and (max-width: 720px) {
+    .portfolio-item{
+        flex-direction: column;
+        justify-content: space-between;
+        height: 635px;
+    }
+
+    .portfolio-item > .p-item{
+        width: 100%;
+        margin-right: 0px;
+        margin-left: 0px;
+    }
+
+    .portfolio-item > .separator {
+        display: none;
+    }
+
+}

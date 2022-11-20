@@ -1,0 +1,328 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;400;500;600;700;800&display=swap');
+
+*{
+    margin: 0px;
+    padding: 0px;
+    list-style: none;
+    text-decoration: none;
+    font-size: 20px;
+    font-family: 'Poppins', sans-serif;
+}
+
+:root{
+    --darkText: #181818;
+    --whiteText: #717171;
+    --whiteBack: #FFF;
+    --darkBack: #F6F5EF;
+    --focusColor: #FFCC33;
+}
+a{
+    transition: all .5s ease;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+#to-the-home{
+    position: fixed;
+    background-color: var(--focusColor);
+    width: 60px;
+    height: 60px;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    bottom: 50px;
+    right: 60px;
+    cursor: pointer;
+    font-size: 16px;
+    color: var(--darkText);
+    border-radius: 50%;
+    transition: all .6s ease-in ;
+}
+
+
+.home-view{
+    height: 100vh;
+    display: flex;
+}
+
+li {
+    list-style-type: none;
+    color: white;
+    padding: 5px 20px;
+}
+
+.tab-bar {
+    /* display: none; */
+    width: 100%;
+    /* background-color: var(--darkBack); */
+    padding-top: 5px;
+    display: flex;
+    align-items: center;
+    padding-left: 20px;
+    padding-bottom: 5px;
+    position: absolute;
+    overflow: hidden;
+    z-index: 10000;
+    height: 40px;
+}
+
+.open-tab-bar {
+    height: auto;
+}
+
+.menu-opener{
+    height: 40px;
+    width: 40px;
+    cursor: pointer;
+    display: none;
+}
+
+.menu ul {
+    display: flex;
+    flex-direction: row;
+}
+
+.menu ul li{
+    color: var(--darkText);
+    cursor: pointer;
+}
+
+.item{
+    flex-shrink: 1;
+}
+
+.left{
+    flex-basis: 60%;
+    flex-grow: 0;
+    overflow: hidden;
+
+}
+.right{
+    flex-grow: 1;
+    background-image: url("../images/profile.jpg");
+    background-position: center top;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+}
+
+/* .home-view{
+    margin-top: 98px;
+} */
+
+.home-view-contener{
+    height: 100%;
+    overflow: hidden;
+}
+
+.home-view-content{
+    height: 100%;
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+}
+
+.contener{
+    margin-right: 50px;
+    margin-left: 100px;
+    padding: 20px;
+    overflow: hidden;
+    display: inline-block;
+    /* border: 1px solid blue; */
+
+}
+h2 > span, .contener > h2{
+    font-size: 50px;
+    font-weight: 900;
+    text-transform: uppercase;
+    line-height: 60px;
+}
+h2 > span{
+    -webkit-text-stroke: 1.7px var(--darkText);
+    color: transparent;
+}
+
+.contener > .decorator{
+    width: 26%;
+    height: 8px;
+    min-width: 130px;
+    background-color: var(--focusColor);
+}
+
+.contener > p{
+    margin-top: 15px;
+    font-size: 20px;
+    color: var(--whiteText);
+    font-weight: 300;
+}
+
+.hidden-overlay{
+    display: none;
+}
+
+.icc{
+    display: none;
+    height: 40px;
+    width: 40px;
+}
+
+.icc-box {
+    display: inline-block;
+    overflow: hidden;
+}
+.tab-bar-contener{
+    display: flex;
+    flex-direction: column;
+    align-item: center;
+}
+
+
+@media screen and (max-width: 1080px){
+    h2 > span{
+        -webkit-text-stroke: 1.2px var(--darkText);
+    }
+
+    .contener{
+        margin-right: 28px;
+        margin-left: 35px;
+    }
+
+    h2 > span, .contener > h2{
+        font-size: 40px;
+        font-weight: 800;
+        line-height: 50px;
+    }
+    .contener > p{
+        font-size: 18px;
+        font-weight: 300;
+    }
+
+    .menu-opener{
+        display: inline-block;
+    }
+
+    .tab-bar {
+        display: block;
+        position: absolute;
+        padding: 5px;
+        
+    }
+    .tab-bar-contener{
+        margin-left: 20px;
+    }
+
+    .menu ul {
+        flex-direction: column;
+        margin-top: 10px;
+        margin-bottom: 20px;
+    }
+
+    .hidden{
+        /* background-color: #33ff3a; */
+        flex-basis: 50%;
+        background-image: url("../images/profile.jpg");
+        background-position: center top;
+        background-repeat: no-repeat;
+        background-size: cover;
+        flex-shrink: 1;
+    }
+    .left{
+        overflow: hidden;
+        height: 100%;
+    }
+    .home-view{
+        display: block;
+        height: 85vh;
+    }
+    .home-view-content{
+        flex-basis: 50%;
+        overflow: hidden;
+    }
+
+    .home-view-contener {
+        display: flex;
+        /* position: relative; */
+        top: 60px;
+        left: 0px;
+        height: 100%;
+        /* min-height: 500px; */
+    }
+
+    .home-view > .right{
+        display: none!important;
+    }
+}
+
+/* ------------------------------------------ */
+
+@media screen and (max-width: 720px){
+    #to-the-home{
+        width: 40px;
+        height: 40px;
+        bottom: 85px;
+        right: 35px;
+    }
+
+    h2 > span{
+        -webkit-text-stroke: .5px var(--whiteBack);
+    }
+    .home-view-content{
+        flex-direction: row;
+        overflow: hidden;
+    }
+
+    h2 > span, .contener > h2{
+        font-size: 33px;
+        font-weight: 700;
+        line-height: 40px;
+    }
+    .contener > p{
+        margin-top: 12px;
+        font-size: 13px;
+        color: var(--whiteBack);
+        opacity: .8;
+    }
+
+    .contener{
+        margin-left: 10px;
+        margin-right: 0px;
+    }
+
+    .home-view-contener > .hidden{
+        display: none;
+    }
+    .home-view-content{
+        flex-basis: 100%;
+        position: relative;
+        background-image: url("../images/profile.jpg");
+        background-position: center top;
+        background-repeat: no-repeat;
+        background-size: cover;
+        overflow: hidden;
+    }
+
+    .hidden-overlay{
+        display: block;
+        background-color: #1818189e;
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        z-index: 5;
+        width: 100%;
+        height: 100%;
+    }
+
+    .home-view-content > .contener{
+        color: white;
+        position: absolute;
+        z-index: 20;
+    }
+    /* .menu{
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        width: 100%;
+        z-index: 1000;
+    } */
+}
+
