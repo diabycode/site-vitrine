@@ -5,7 +5,6 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <link rel="stylesheet" href="fontawesome-free-6.1.1-web/css/fontawesome.min.css">
     <link rel="stylesheet" href="styles/header.css">
     <link rel="stylesheet" href="styles/about.css">
     <link rel="stylesheet" href="styles/portfolio.css">
@@ -17,7 +16,7 @@
 </head>
 <body>
     
-    <div id="to-the-home">Haut</div>
+    <div id="to-the-home">Top</div>
 
     <div class="home-view" id="home">
         <div class="left item">
@@ -44,12 +43,16 @@
                 <div class="home-view-content">
                     <div class="contener">
                         <div class="decorator"></div>
-                        <p>Bienvenu ! Je m'appelle</p>
+                        <p>Bienvenu ! Je Tm'appelle</p>
                         <h2><span>DIABY</span> Almamy Youssouf,</h2>
                         <p>Je suis développeur junior python avec +4 ans d'expérience.</p>
+                        <div class="contact-button-div">
+                            <button>Me contacter</button>
+                        </div>
                     </div>
                     <div class="hidden-overlay">
                     </div>
+                    
                 </div>
                 <div class="item hidden">
                 </div>
@@ -106,16 +109,16 @@
                         <td class="table-data">Almamy Y.</td><td class="table-data">Côte d'Ivoire</td>
                     </tr>
                     <tr>
-                        <td class="table-head">Date de naissance</td><td class="table-head">Email</td>
+                        <td class="table-head">Date de naissance</td><td class="table-head">Langue</td>
                     </tr>
                     <tr>
-                        <td class="table-data">15/05/2000</td><td class="table-data">diabyissouf149@gmail.com</td>
+                        <td class="table-data">15/05/2000</td><td class="table-data">Français</td>
                     </tr>
                     <tr>
-                        <td class="table-head">Téléphone</td><td class="table-head">Langue</td>
+                        <td class="table-head">Téléphone</td>
                     </tr>
                     <tr>
-                        <td class="table-data">+225 0565181165</td><td class="table-data">Français</td>
+                        <td class="table-data">+225 0565181165</td>
                     </tr>
                 </table>
 
@@ -181,7 +184,7 @@
                         <!-- <a href="#">En savoir plus</a> -->
                     </div>
                 </div>
-                <h3>Les technologies que j'utilise</h3>
+                <h3 class="skills-title">Les technologies que j'utilise</h3>
                 <div class="skills-items">
                     <div class="item">
                         <div class="jauge for-html-css">
@@ -271,52 +274,53 @@
         tab_bar = document.querySelector(".tab-bar")
         home_return_button = document.querySelector("#to-the-home")
 
-        home_buttom = document.querySelector("#home-section-link")
-        about_button = document.querySelector("#about-section-link")
-        portfolio_button = document.querySelector("#portfolio-section-link")
-        services_button = document.querySelector("#services-section-link")
-        contact_button = document.querySelector("#contact-section-link")
+        home_link = document.querySelector("#home-section-link")
 
+        let navLinks = [...document.querySelectorAll(".menu li")]
+        navLinks.shift()
+
+        let sections = [...document.querySelectorAll(".section")]
+        sections.shift()
+
+        let sectionsPosition;
+
+        // refresh element positions
+        function positionCalculation(){
+            sectionsPosition = sections.map(section => section.offsetTop)
+        }
+        positionCalculation()
+
+        // map elements with her position
+        navLinks.forEach(link => link.addEventListener("click", addScrollSmooth))
+
+        function addScrollSmooth(e){
+            const linkIndex = navLinks.indexOf(e.target);
+
+            tab_bar.classList.toggle("open-tab-bar");
+
+            window.scrollTo({
+                top: sectionsPosition[linkIndex],
+                behavior: "smooth"
+            })
+
+        }
+
+        window.addEventListener("resize", positionCalculation)
 
         // scroll function
         function smoothScroll(t){
             window.scrollTo({top: t, behavior: 'smooth'});
         }
 
+        home_link.addEventListener("click", function(){
+            smoothScroll(0);
+        })
+
+
         // scroll to top
         home_return_button.addEventListener("click", function(){
             smoothScroll(0);
         })
-
-        home_buttom.addEventListener("click", function(){
-            smoothScroll(0);
-            tab_bar.classList.toggle("open-tab-bar");
-        })
-
-        // scroll to about section
-        about_button.addEventListener("click", function(){
-            smoothScroll(747);
-            tab_bar.classList.toggle("open-tab-bar");
-        })
-
-        // scroll to portfolio section
-        portfolio_button.addEventListener("click", function(){
-            smoothScroll(1342);
-            tab_bar.classList.toggle("open-tab-bar");
-        })
-
-        // scroll to services section
-        services_button.addEventListener("click", function(){
-            smoothScroll(2101);
-            tab_bar.classList.toggle("open-tab-bar");
-        })
-
-        // scroll to contact section
-        contact_button.addEventListener("click", function(){
-            smoothScroll(2860);
-            tab_bar.classList.toggle("open-tab-bar");
-        })
-
 
         // open menu
         menu_opener.addEventListener("click", function(){

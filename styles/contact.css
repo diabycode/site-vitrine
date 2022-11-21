@@ -92,9 +92,12 @@
     font-size: 14px;
     color: var(--darkBack);
 }
-@media screen and (max-width: 560px){
+@media screen and (max-width: 660px){
     .contact-content{
         flex-direction: column;
+    }
+    .mail-me > p, .mail-me h4{
+        display: none;
     }
     .contact-content > .join-me {
         padding: 0px;

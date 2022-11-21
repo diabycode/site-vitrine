@@ -36,7 +36,8 @@ a{
     font-size: 16px;
     color: var(--darkText);
     border-radius: 50%;
-    transition: all .6s ease-in ;
+    transition: all .8s ease;
+    box-shadow: 0px 0px 15px #18181830;
 }
 
 
@@ -64,6 +65,7 @@ li {
     overflow: hidden;
     z-index: 10000;
     height: 40px;
+    transition: all .5s ease;
 }
 
 .open-tab-bar {
@@ -113,6 +115,25 @@ li {
 .home-view-contener{
     height: 100%;
     overflow: hidden;
+}
+
+.contact-button-div {
+    display: flex;
+    justify-content: flex-start;
+    margin-top: 15px;
+}
+.contact-button-div button{
+    background-color: var(--focusColor);
+    border: none;
+    padding: 10px 16px;
+    cursor: pointer;
+    color: var(--darkText);
+    box-sizing: border-box;
+    transition: all .6s ease;
+}
+.contact-button-div button:hover{
+    background-color: var(--darkBack);
+    border: .7px solid var(--darkText);
 }
 
 .home-view-content{
@@ -173,11 +194,16 @@ h2 > span{
 .tab-bar-contener{
     display: flex;
     flex-direction: column;
-    align-item: center;
+    /* align-items: center; */
 }
 
 
 @media screen and (max-width: 1080px){
+    .contact-button-div > button{
+        padding: 5px 8px;
+        font-size: 18px;
+    }
+
     h2 > span{
         -webkit-text-stroke: 1.2px var(--darkText);
     }

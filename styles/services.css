@@ -14,6 +14,10 @@
     width: 80px!important;
 }
 
+.skills-title{
+    margin-top: 20px;
+}
+
 .services-section{
     background-color: var(--darkSection);
 }
@@ -70,7 +74,7 @@
     align-items: center;
     justify-content: center;
     padding: 10px;
-    box-shadow: 0px 0px 15px #ffcc33b5;
+    box-shadow: 0px 0px 10px #ffcc335a;
     border-radius: 15px;
 }
 .skills-items{
@@ -200,6 +204,11 @@
 }
 
 @media screen and (max-width: 510px){
+    .section-contener > .service-cards .card{
+        /* background-color: #181818; */
+        height: 300px!important;
+    }
+
     .skills-items {
         flex-direction: column;
         height: 510px;
