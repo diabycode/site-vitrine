@@ -18,7 +18,8 @@
     background-color: var(--darkText);
     color: var(--darkBack);
     padding: 5px 15px;
-    display: inline-block;
+    display: none;
+
 }
 
 .portfolio-item{
@@ -26,6 +27,7 @@
     justify-content: space-between;
     align-items: center;
     margin-bottom: 50px;
+    margin-top: 18px;
 
 }
 .portfolio-item > .separator{
@@ -47,7 +49,7 @@
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center top;
-    box-shadow: 0px 0px 22px rgba(164, 164, 164, 0.635);
+    box-shadow: 0px 0px 17px rgba(164, 164, 164, 0.494);
 }
 
 @media screen and (max-width: 720px) {

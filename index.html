@@ -29,11 +29,11 @@
                     </div>
                     <div class="menu">
                         <ul>
-                            <li id="home-section-link">Home</li>
-                            <li id="about-section-link">About</li>
-                            <li id="portfolio-section-link">Portfolio</li>
-                            <li id="services-section-link">Services</li>
-                            <li id="contact-section-link">Contact</li>
+                            <li id="home-section-link">home</li>
+                            <li id="about-section-link">à propos</li>
+                            <li id="portfolio-section-link">portfolio</li>
+                            <li id="services-section-link">services</li>
+                            <li id="contact-section-link">contact</li>
                         </ul>
                     </div>
                 </div>
@@ -47,7 +47,7 @@
                         <h2><span>DIABY</span> Almamy Youssouf,</h2>
                         <p>Je suis développeur junior python avec +4 ans d'expérience.</p>
                         <div class="contact-button-div">
-                            <button>Me contacter</button>
+                            <a href="mailto:diaby@genius.ci?subject=Contact depuis le site web !">Me contacter</a>
                         </div>
                     </div>
                     <div class="hidden-overlay">
@@ -67,16 +67,16 @@
             <div class="section-contener">
                 <div class="experience-duration">
                     <div class="d-item">
-                        <h4>05<span>+</span></h4>
+                        <h4>04<span>+</span></h4>
                         <p>Ans d'expérience</p>
                     </div>
                     <div class="d-item">
-                        <h4>35<span>+</span></h4>
+                        <h4>8<span>+</span></h4>
                         <p>Projets réalisés</p>
                     </div>
                     <div class="d-item">
-                        <h4>10<span>+</span></h4>
-                        <p>Projets en attentes</p>
+                        <h4>5<span>+</span></h4>
+                        <p>Projets cours</p>
                     </div>
                 </div>
             </div>
@@ -126,7 +126,7 @@
 
                 <div class="bottom">
                     <p>Pour en découvrir davantage me concernant, pensez à télécharger mon cv en cliquant sur télécharger.</p>
-                    <a href="#">Télécharger</a>
+                    <a href="images/youssouf-cv-to-download.jpg" download>Télécharger</a>
                 </div>
             </div>
 
@@ -134,8 +134,8 @@
         <div id="portfolio" class="section portfolio-section">
             <div class="section-contener">
                 <span>Mon portfolio</span>
-                <h3>Découvrez nos projets réalisé</h3>
-                <p>Projets récemment ajoutés</p>
+                <h3>Découvrez des projets personnel que j'ai eu à réaliser</h3>
+                <p>Récemment ajoutés</p>
                 <div class="portfolio-item">
                     <div class="p-item p-item1"></div>
                     <div class="separator"></div>
@@ -147,8 +147,8 @@
         <div id="services" class="section services-section">
             <div class="section-contener">
                 <span>Mes services</span>
-                <h3>Découvrez l'ensemble des services que nous vous proposons</h3>
-                <p>Nos servives sont proposé pour tous projets/prestations en rapport avec le listing ci-desous.</p>
+                <h3>Découvrez l'ensemble des services que je vous propose</h3>
+                <p>Mes servives sont proposé pour tous projets/prestations en rapport avec le listing ci-desous.</p>
                 <div class="service-cards">
                     <div class="card">
                         <div class="card-title" >
@@ -269,6 +269,19 @@
     </div>
 
     <script>
+        let navLinks = [...document.querySelectorAll(".menu li")]
+        navLinks.shift()
+
+        let sections = [...document.querySelectorAll(".section")]
+        sections.shift()
+        
+        let sectionsPosition;
+        function positionCalculation(){
+            sectionsPosition = sections.map(section => section.offsetTop)
+        }
+        positionCalculation()
+        
+
         // DOM Elements
         menu_opener = document.querySelector(".menu-opener")
         tab_bar = document.querySelector(".tab-bar")
@@ -276,36 +289,8 @@
 
         home_link = document.querySelector("#home-section-link")
 
-        let navLinks = [...document.querySelectorAll(".menu li")]
-        navLinks.shift()
-
-        let sections = [...document.querySelectorAll(".section")]
-        sections.shift()
-
-        let sectionsPosition;
-
         // refresh element positions
-        function positionCalculation(){
-            sectionsPosition = sections.map(section => section.offsetTop)
-        }
-        positionCalculation()
-
-        // map elements with her position
-        navLinks.forEach(link => link.addEventListener("click", addScrollSmooth))
-
-        function addScrollSmooth(e){
-            const linkIndex = navLinks.indexOf(e.target);
-
-            tab_bar.classList.toggle("open-tab-bar");
-
-            window.scrollTo({
-                top: sectionsPosition[linkIndex],
-                behavior: "smooth"
-            })
-
-        }
-
-        window.addEventListener("resize", positionCalculation)
+        
 
         // scroll function
         function smoothScroll(t){
@@ -329,7 +314,6 @@
             console.log(tab_bar.classList);
         })
 
-
         // scroll listener
         window.addEventListener("scroll", function(){
             // console.log(scrollY);
@@ -352,6 +336,28 @@
                 tab_bar.style.position = "static";
             }
         })
+
+
+        
+
+        
+        
+        // map elements with her position
+        navLinks.forEach(link => link.addEventListener("click", addScrollSmooth))
+
+        function addScrollSmooth(e){
+            const linkIndex = navLinks.indexOf(e.target);
+
+            tab_bar.classList.toggle("open-tab-bar");
+
+            positionCalculation()
+            window.scrollTo({
+                top: sectionsPosition[linkIndex],
+                behavior: "smooth"
+            })
+
+        }
+        window.addEventListener("resize", positionCalculation)
 
     </script>
 </body>
