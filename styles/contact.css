@@ -25,10 +25,14 @@
 
 }
 
-.join-me li p {
+.join-me li p, .join-me li p a {
     color: var(--darkText);
     font-size: 17px;
 
+}
+
+.join-me li p a:hover{
+    text-decoration: underline;
 }
 
 

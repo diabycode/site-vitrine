@@ -43,13 +43,41 @@
     margin-left: 30px;
 }
 .portfolio-item > .p-item{
-    height: 380px;
+    position: relative;
+    height: 340px;
     width: 360px;
-    background-image: url("../images/project-thumbnail.jpg");
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center top;
     box-shadow: 0px 0px 17px rgba(164, 164, 164, 0.494);
+    overflow: hidden;
+}
+
+.portfolio-item .p-item .desc a {
+    color: var(--darkText);
+    text-decoration: underline;
+}
+
+.portfolio-item .p-item .desc a:hover{
+    text-decoration: none;
+}
+.portfolio-item .p-item .desc p, .portfolio-item .p-item .desc a{
+    font-size: 16px;
+}
+.portfolio-item .p-item .desc {
+    background-color: #FFCC33;
+    position: absolute;
+    left: 0px;
+    bottom: 0px;
+    padding: 8px;
+    width: 100%;
+} 
+
+.portfolio-item > .p-item1{
+    background-image: url("../images/EnWordGen.jpg");
+}
+.portfolio-item > .p-item2{
+    background-image: url("../images/JTask.jpg");
 }
 
 @media screen and (max-width: 720px) {
