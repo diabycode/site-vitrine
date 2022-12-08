@@ -38,6 +38,7 @@ a{
     border-radius: 50%;
     transition: all .8s ease;
     box-shadow: 0px 0px 15px #18181830;
+    z-index: 5000;
 }
 
 
