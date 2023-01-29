@@ -136,7 +136,7 @@ body {
     padding: 15px;
     border-radius: 10px;
     margin: 15px;
-    width: calc(50% - 62px);
+    width: calc(50% - 63px);
     cursor: pointer;
     border: .5px solid rgb(212, 212, 212);
 }
