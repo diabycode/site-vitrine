@@ -91,22 +91,17 @@
     font-size: 16px;
 }
 .about-section > .section-contener > .bottom{
-    display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
     margin-top: 20px;
 }
 .about-section > .section-contener > .bottom > p{
-    max-width: 550px;
     font-size: var(--size2);
     margin-bottom: 10px;
 }
 
 .about-section > .section-contener > .bottom > a{
     padding: 0px 15px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
     color: var(--darkText);
     border: 2px solid var(--darkText);
     font-size: var(--size2);
