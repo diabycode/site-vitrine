@@ -43,24 +43,11 @@ menu_opener.addEventListener("click", function(){
 
 // scroll listener
 window.addEventListener("scroll", function(){
-    // console.log(scrollY);
 
     if (scrollY > 600){
         home_return_button.style.display = "flex";
     } else {
         home_return_button.style.display = "none";
-    }
-
-    if (scrollY > 10){
-        // F6F5EF
-        tab_bar.style.boxShadow = "0px -3px 8px #717171";
-        tab_bar.style.backgroundColor = "#FFF";
-        tab_bar.style.position = "fixed";
-
-    } else{
-        tab_bar.style.boxShadow = "";
-        tab_bar.style.backgroundColor = "";
-        tab_bar.style.position = "static";
     }
 })
 
@@ -85,8 +72,6 @@ window.addEventListener("resize", positionCalculation)
 
 
 // ------ projects
-
-
 
 document.querySelectorAll(".project-item").forEach( element => {
     element.addEventListener("mousemove", () => {
