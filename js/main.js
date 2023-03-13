@@ -38,12 +38,10 @@ home_return_button.addEventListener("click", function(){
 // open menu
 menu_opener.addEventListener("click", function(){
     tab_bar.classList.toggle("open-tab-bar");
-    console.log(tab_bar.classList);
 })
 
 // scroll listener
 window.addEventListener("scroll", function(){
-    // console.log(scrollY);
 
     if (scrollY > 600){
         home_return_button.style.display = "flex";
@@ -51,17 +49,12 @@ window.addEventListener("scroll", function(){
         home_return_button.style.display = "none";
     }
 
-    if (scrollY > 10){
-        // F6F5EF
-        tab_bar.style.boxShadow = "0px -3px 8px #717171";
-        tab_bar.style.backgroundColor = "#FFF";
-        tab_bar.style.position = "fixed";
-
-    } else{
-        tab_bar.style.boxShadow = "";
-        tab_bar.style.backgroundColor = "";
-        tab_bar.style.position = "static";
+    if (scrollY > 30){
+        tab_bar.classList.add("add-background");
+    } else {
+        tab_bar.classList.remove("add-background");
     }
+
 })
 
 
@@ -85,8 +78,6 @@ window.addEventListener("resize", positionCalculation)
 
 
 // ------ projects
-
-
 
 document.querySelectorAll(".project-item").forEach( element => {
     element.addEventListener("mousemove", () => {

@@ -53,6 +53,12 @@ li {
     padding: 5px 20px;
 }
 
+.tab-bar.add-background {
+    background-color: white;
+    box-shadow: 0px 0px 15px #18181830;
+    position: fixed;
+}
+
 .tab-bar {
     /* display: none; */
     width: 100%;
@@ -60,22 +66,24 @@ li {
     padding-top: 5px;
     display: flex;
     align-items: center;
+    background-color: transparent;
     padding-left: 20px;
     padding-bottom: 5px;
     position: absolute;
     overflow: hidden;
     z-index: 10000;
-    height: 40px;
+    height: 35px;
     transition: all .5s ease;
 }
 
 .open-tab-bar {
     height: auto;
+    background-color: white;
 }
 
 .menu-opener{
-    height: 40px;
-    width: 40px;
+    height: 35px;
+    width: 35px;
     cursor: pointer;
     display: none;
 }
@@ -100,12 +108,19 @@ li {
     overflow: hidden;
 
 }
+
+.right img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center top;
+}
 .right{
     flex-grow: 1;
-    background-image: url("../images/profile.jpg");
-    background-position: center top;
+    /* background-image: url("../images/profile.jpg"); */
+    /* background-position: center top;
     background-repeat: no-repeat;
-    background-size: cover;
+    background-size: cover; */
 
 }
 
@@ -200,6 +215,13 @@ h2 > span{
 
 
 @media screen and (max-width: 1080px){
+    .menu ul li {
+        transition: transform .2s ease;
+    }
+    .menu ul li:hover {
+        transform: translateX(10px);
+    }
+
     .contact-button-div > a{
         padding: 5px 8px;
         font-size: 18px;
@@ -220,7 +242,7 @@ h2 > span{
         line-height: 50px;
     }
     .contener > p{
-        font-size: 18px;
+        font-size: 15px;
         font-weight: 300;
     }
 
@@ -230,7 +252,11 @@ h2 > span{
 
     .tab-bar {
         display: block;
-        position: absolute;
+        /* position: fixed;
+        background-color: white;
+        top: 0px;
+        left: 0px; */
+        /* box-shadow: 0px -3px 8px #717171; */
         padding: 5px;
         
     }
@@ -255,6 +281,7 @@ h2 > span{
     }
     .left{
         overflow: hidden;
+        position: relative;
         height: 100%;
     }
     .home-view{
